@@ -1,0 +1,24 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DXRichEditSyntaxExample", "DXRichEditSyntaxExample\DXRichEditSyntaxExample.vbproj", "{52F77B1E-BCAE-4B11-BFC9-51E70ADE1FB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52F77B1E-BCAE-4B11-BFC9-51E70ADE1FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52F77B1E-BCAE-4B11-BFC9-51E70ADE1FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52F77B1E-BCAE-4B11-BFC9-51E70ADE1FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52F77B1E-BCAE-4B11-BFC9-51E70ADE1FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACA91C17-2C39-4A04-966C-D5A072862C0B}
+	EndGlobalSection
+EndGlobal
