@@ -98,10 +98,10 @@ Namespace DXRichEditSyntaxExample
             Return False
         End Function
 
-        Public Sub ForceExecute()
+       Public Sub ForceExecute() Implements ISyntaxHighlightService.ForceExecute
             Execute()
         End Sub
-        Public Sub Execute()
+        Public Sub Execute() Implements ISyntaxHighlightService.Execute
             document.ApplySyntaxHighlight(ParseTokens())
         End Sub
     End Class
