@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:DXRichEditSyntaxExample"
         xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="T-SQL Syntax" Height="450" Width="800">
     <Grid>
-        <dxre:RichEditControl x:Name="richEditControl1" ActiveViewType="Draft"/>
+        <dxre:RichEditControl x:Name="richEditControl1" ActiveViewType="Draft">
+            <dxre:RichEditControl.SearchOptions>
+                <dxre:DXRichEditDocumentSearchOptions RegExResultMaxGuaranteedLength="500"/>
+            </dxre:RichEditControl.SearchOptions>
+        </dxre:RichEditControl>
     </Grid>
 </Window>
