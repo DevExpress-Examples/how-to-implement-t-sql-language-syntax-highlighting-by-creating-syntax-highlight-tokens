@@ -59,14 +59,14 @@ namespace DXRichEditSyntaxExample
             DocumentRange[] ranges = null;
 
             // Search for quoted strings
-            ranges = document.FindAll(_quotedString);
+            ranges = document.FindAll(_quotedString).GetAsFrozen() as DocumentRange[];
             for (int i = 0; i < ranges.Length; i++)
             {
                 tokens.Add(CreateToken(ranges[i].Start.ToInt(), ranges[i].End.ToInt(), Color.Red));
             }
 
             //Extract all keywords
-            ranges = document.FindAll(_keywords);
+            ranges = document.FindAll(_keywords).GetAsFrozen() as DocumentRange[];
             for (int j = 0; j < ranges.Length; j++)
             {
                 //Check whether tokens intersect
@@ -75,7 +75,7 @@ namespace DXRichEditSyntaxExample
             }
 
             //Find all comments
-            ranges = document.FindAll(_commentedString);
+            ranges = document.FindAll(_commentedString).GetAsFrozen() as DocumentRange[];
             for (int j = 0; j < ranges.Length; j++)
             {
                 //Check whether tokens intersect

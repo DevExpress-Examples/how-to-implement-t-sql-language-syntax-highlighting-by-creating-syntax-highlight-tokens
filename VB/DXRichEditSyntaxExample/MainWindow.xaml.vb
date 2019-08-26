@@ -42,52 +42,52 @@ Namespace DXRichEditSyntaxExample
 			Me._keywords = New Regex("\b(" & String.Join("|", keywords.Select(Function(w) Regex.Escape(w))) & ")\b")
 		End Sub
 
-		Public Sub Execute()
-			Dim tSqltokens As List(Of SyntaxHighlightToken) = ParseTokens()
-			document.ApplySyntaxHighlight(tSqltokens)
-		End Sub
-		Public Sub ForceExecute()
-			Execute()
-		End Sub
+        Public Sub Execute() Implements ISyntaxHighlightService.Execute
+            Dim tSqltokens As List(Of SyntaxHighlightToken) = ParseTokens()
+            document.ApplySyntaxHighlight(tSqltokens)
+        End Sub
+        Public Sub ForceExecute() Implements ISyntaxHighlightService.ForceExecute
+            Execute()
+        End Sub
 
-		Private Function ParseTokens() As List(Of SyntaxHighlightToken)
-			Dim tokens As New List(Of SyntaxHighlightToken)()
-			Dim ranges() As DocumentRange = Nothing
+        Private Function ParseTokens() As List(Of SyntaxHighlightToken)
+            Dim tokens As New List(Of SyntaxHighlightToken)()
+            Dim ranges() As DocumentRange = Nothing
 
-			' Search for quoted strings
-			ranges = document.FindAll(_quotedString)
-			For i As Integer = 0 To ranges.Length - 1
-				tokens.Add(CreateToken(ranges(i).Start.ToInt(), ranges(i).End.ToInt(), Color.Red))
-			Next i
+            ' Search for quoted strings
+            ranges = TryCast(document.FindAll(_quotedString).GetAsFrozen(), DocumentRange())
+            For i As Integer = 0 To ranges.Length - 1
+                tokens.Add(CreateToken(ranges(i).Start.ToInt(), ranges(i).End.ToInt(), Color.Red))
+            Next i
 
-			'Extract all keywords
-			ranges = document.FindAll(_keywords)
-			For j As Integer = 0 To ranges.Length - 1
-				'Check whether tokens intersect
-				If Not IsRangeInTokens(ranges(j), tokens) Then
-					tokens.Add(CreateToken(ranges(j).Start.ToInt(), ranges(j).End.ToInt(), Color.Blue))
-				End If
-			Next j
+            'Extract all keywords
+            ranges = TryCast(document.FindAll(_keywords).GetAsFrozen(), DocumentRange())
+            For j As Integer = 0 To ranges.Length - 1
+                'Check whether tokens intersect
+                If Not IsRangeInTokens(ranges(j), tokens) Then
+                    tokens.Add(CreateToken(ranges(j).Start.ToInt(), ranges(j).End.ToInt(), Color.Blue))
+                End If
+            Next j
 
-			'Find all comments
-			ranges = document.FindAll(_commentedString)
-			For j As Integer = 0 To ranges.Length - 1
-				'Check whether tokens intersect
-				If Not IsRangeInTokens(ranges(j), tokens) Then
-					tokens.Add(CreateToken(ranges(j).Start.ToInt(), ranges(j).End.ToInt(), Color.Green))
-				End If
-			Next j
+            'Find all comments
+            ranges = TryCast(document.FindAll(_commentedString).GetAsFrozen(), DocumentRange())
+            For j As Integer = 0 To ranges.Length - 1
+                'Check whether tokens intersect
+                If Not IsRangeInTokens(ranges(j), tokens) Then
+                    tokens.Add(CreateToken(ranges(j).Start.ToInt(), ranges(j).End.ToInt(), Color.Green))
+                End If
+            Next j
 
-			' Sort tokens by their start position
-			tokens.Sort(New SyntaxHighlightTokenComparer())
+            ' Sort tokens by their start position
+            tokens.Sort(New SyntaxHighlightTokenComparer())
 
-			' Fill in gaps in document coverage
-			tokens = CombineWithPlainTextTokens(tokens)
-			Return tokens
-		End Function
+            ' Fill in gaps in document coverage
+            tokens = CombineWithPlainTextTokens(tokens)
+            Return tokens
+        End Function
 
-		'Parse the remaining text into tokens:
-		Private Function CombineWithPlainTextTokens(ByVal tokens As List(Of SyntaxHighlightToken)) As List(Of SyntaxHighlightToken)
+        'Parse the remaining text into tokens:
+        Private Function CombineWithPlainTextTokens(ByVal tokens As List(Of SyntaxHighlightToken)) As List(Of SyntaxHighlightToken)
 			Dim result As New List(Of SyntaxHighlightToken)(tokens.Count * 2 + 1)
 			Dim documentStart As Integer = Me.document.Range.Start.ToInt()
 			Dim documentEnd As Integer = Me.document.Range.End.ToInt()
