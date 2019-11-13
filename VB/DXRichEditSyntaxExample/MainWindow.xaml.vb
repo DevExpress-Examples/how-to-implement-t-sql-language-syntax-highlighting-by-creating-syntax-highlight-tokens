@@ -55,13 +55,13 @@ Namespace DXRichEditSyntaxExample
             Dim ranges() As DocumentRange = Nothing
 
             ' Search for quoted strings
-            ranges = TryCast(document.FindAll(_quotedString).GetAsFrozen(), DocumentRange())
+            ranges = document.FindAll(_quotedString)
             For i As Integer = 0 To ranges.Length - 1
                 tokens.Add(CreateToken(ranges(i).Start.ToInt(), ranges(i).End.ToInt(), Color.Red))
             Next i
 
             'Extract all keywords
-            ranges = TryCast(document.FindAll(_keywords).GetAsFrozen(), DocumentRange())
+            ranges = document.FindAll(_keywords)
             For j As Integer = 0 To ranges.Length - 1
                 'Check whether tokens intersect
                 If Not IsRangeInTokens(ranges(j), tokens) Then
@@ -70,7 +70,7 @@ Namespace DXRichEditSyntaxExample
             Next j
 
             'Find all comments
-            ranges = TryCast(document.FindAll(_commentedString).GetAsFrozen(), DocumentRange())
+            ranges = document.FindAll(_commentedString)
             For j As Integer = 0 To ranges.Length - 1
                 'Check whether tokens intersect
                 If Not IsRangeInTokens(ranges(j), tokens) Then
