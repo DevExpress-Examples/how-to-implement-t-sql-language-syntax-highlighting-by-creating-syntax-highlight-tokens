@@ -22,14 +22,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Data" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Data.Desktop" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Mvvm" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Office.Core" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.RichEdit.Core" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Core" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Office" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.RichEdit" Version="21.1.*-*" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" Version="21.1.*-*" />
+    <PackageReference Include="DevExpress.Data" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Data.Desktop" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Mvvm" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Office.Core" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.RichEdit.Core" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Office" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.RichEdit" Version="23.2.*-*" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" Version="23.2.*-*" />
   </ItemGroup>
 </Project>
