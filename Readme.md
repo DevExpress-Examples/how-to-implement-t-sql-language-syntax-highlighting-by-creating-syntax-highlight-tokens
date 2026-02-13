@@ -20,7 +20,7 @@ Text is parsed into tokens (a list of [SyntaxHighlightToken](https://docs.devexp
 
 * [How to: Highlight Document Syntax](https://docs.devexpress.com/WPF/14714/controls-and-libraries/rich-text-editor/examples/automation/how-to-highlight-document-syntax)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-implement-t-sql-language-syntax-highlighting-by-creating-syntax-highlight-tokens&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-implement-t-sql-language-syntax-highlighting-by-creating-syntax-highlight-tokens&~~~was_helpful=no)
 
