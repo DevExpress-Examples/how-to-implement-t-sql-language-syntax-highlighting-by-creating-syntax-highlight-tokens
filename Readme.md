@@ -15,6 +15,7 @@ Text is parsed into tokens (a list of [SyntaxHighlightToken](https://docs.devexp
 ## More Examples
 
 * [Use DevExpress CodeParser and Syntax Highlight tokens to Highlight C# and VB Code](https://github.com/DevExpress-Examples/syntax-highlighting-for-c-and-vb-code-using-devexpress-codeparser-and-syntax-highlight-tokens)
+* [WPF Monaco-Based Code Editor](https://github.com/DevExpress-Examples/wpf-monaco-code-editor)
 
 ## Documentation
 
